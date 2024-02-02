@@ -123,3 +123,37 @@ a {
     border: 1px solid aqua;
     border-radius: 2px;
 }
+
+.footer {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+    background-color: rgb(21, 7, 51);
+}
+
+.footer ul {
+    list-style: none;
+    padding: 30px 10px 0 0;
+    flex: auto;
+    display: grid;
+    margin: 50px;
+}
+
+.social-media {
+    padding: 30px 10px 0;
+    flex: auto;
+}
+
+.social-media ul {
+    display: flex;
+    margin-right: -20px;
+}
+
+i {
+    margin: 5px;
+}
+
+.footer li {
+    font-size: 15px;
+}
