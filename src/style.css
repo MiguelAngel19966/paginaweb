@@ -130,6 +130,8 @@ a {
     flex-wrap: wrap;
     padding-bottom: 30px;
     background-color: rgb(21, 7, 51);
+    width: 1600px;
+    margin-top: 100px;
 }
 
 .footer ul {
@@ -156,4 +158,43 @@ i {
 
 .footer li {
     font-size: 15px;
+}
+
+.main-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 500px;
+
+}
+
+.form-title {
+    font-size: 50px;
+}
+
+form {
+    background-color: #311178;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+form > input {
+    display: block;
+    margin: 13px;
+    height: 30px;
+    padding: 10px;
+    width: 90%;
+}
+
+.button {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: gold;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form > h1, p {
+    text-align: center;
+    font-weight: bold;
 }
