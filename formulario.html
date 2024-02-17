@@ -19,9 +19,9 @@
             <input type="tex" class="search" placeholder="Buscar">
             <nav class="menu">
                 <ul>
-                    <li><a href="index.html" target="_blank">Inicio</a></li>
-                    <li><a href="formulario.html" target="_blank">Registro</a></li>
-                    <li><a href="perfil.html" target="_blank">Perfil</a></li>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="formulario.html">Registro</a></li>
+                    <li><a href="perfil.html">Perfil</a></li>
                 </ul>
             </nav>
         </header>
@@ -80,5 +80,23 @@
                 </div>
             </div>
         </footer>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const formulario = document.querySelector('form');
+                formulario.addEventListener('submit', function(evento) {
+                    evento.preventDefault(); 
+        
+                    const correo = document.getElementById('exampleInputEmail1').value;
+                    const contraseña = document.getElementById('exampleInputPassword1').value;
+        
+                    
+                    if (correo === '123456@hotmail.com' && contraseña === '123456') {
+                        alert('¡Bienvenido!');
+                    } else {
+                        alert('Correo electrónico o contraseña incorrectos. Por favor, inténtelo de nuevo.');
+                    }
+                });
+            });
+        </script>
     </body>
     </html>

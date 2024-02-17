@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">    
+    <link href="src/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Detalle</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <header class="header">
+        <figure>
+        <img src="src/imagenes/logo.svg" alt="logo">
+        </figure> 
+        <input type="tex" class="search" placeholder="Buscar">
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="formulario.html">Registro</a></li>
+                <li><a href="perfil.html">Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container-detalle">
+        <div class="row">
+            <div class="col col-12 text-center">
+                <h2 id="container-title">Recomendaciones para ti</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-12 col-sm-12 col-md-8 col-lg-8">
+                <img src="src/imagenes/palwordoriginal.JPG" width="40%" height="auto">
+            </div>
+            <div class="col col-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="row">
+                    <div class="col col-12">
+                        <h2>Palword</h2>
+                    </div>
+                    <div class="col col-12">
+                        <h3>Desde 115.00 PEN</h3>
+                    </div>
+                    <div class="col col-12">
+                        <p>Palword PC/XBOX LIVE Key South America.</p>
+                    </div>
+                    <div class="col col-12 col-sm-12 col-md-6 col-lg-6 text-center">
+                        <input type="number" class="form-control" id="cantidad" value="1" required>
+                    </div>
+                    <div class="col col-12 mt-5">
+                        <a href="#" class="btn btn-primary btn-block" id="agregar-carrito">Agregar al carrito<i class="fa-solid fa-cart-shopping"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modal-text"></p>
+            <p id="modal-text">Selecciona un método de pago:</p>
+            <button class="payment-method-btn" onclick="iconosDePago()">Seleccionar Método de Pago</button>
+            <div class="payment-icons" id="payment-icons">
+                <i class="fab fa-paypal"></i>
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var modal = document.getElementById("modal");
+        var span = document.getElementsByClassName("close")[0];
+        
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+
+        document.getElementById('agregar-carrito').addEventListener('click', function(event) {
+            event.preventDefault(); 
+        
+            var cantidad = parseInt(document.getElementById('cantidad').value);
+        
+            var nombreProducto = "Palword";
+            var precioProducto = 115.00;
+            
+            var modalText = "Has agregado " + cantidad + " " + nombreProducto + "(s) al carrito por un total de " + (precioProducto * cantidad) + " PEN";
+            document.getElementById("modal-text").innerText = modalText;
+            modal.style.display = "block";
+        });
+    </script>
+
+    <script>
+        function iconosDePago() {
+            var contenedorIconos = document.getElementById("payment-icons");
+            var valor = window.getComputedStyle(contenedorIconos).display;
+            contenedorIconos.style.display = (valor === 'none' || valor === '') ? 'block' : 'none';
+        }
+    </script>
+
+    <footer>
+        <div class="footer">
+            <ul>
+                <li style="margin-bottom: 5px;font-weight: bold;">Sobre eneba</li>
+                <li>Sobre nosotros</li>
+                <li>Contactanos</li>
+                <li>Carretas</li>
+            </ul>
+            <ul>
+                <li style="margin-bottom: 5px;font-weight: bold;">Comprar</li>
+                <li>Cómo comprar</li>
+                <li>Lista de juegos</li>
+                <li>Colecciones</li>
+                <li>Pogramas de fidelidad</li>
+            </ul>
+            <ul>
+                <li style="margin-bottom: 5px;font-weight: bold;">Ayuda</li>
+                <li>Como activar el juego</li>
+                <li>Crear un ticket</li>
+                <li>Política de devoluciones</li> 
+            </ul>
+            <ul>
+                <li style="margin-bottom: 5px;font-weight: bold;">Comunidad</li>
+                <li>Sorteos</li>
+                <li>Blog</li>
+            </ul>
+            <div class="social-media">
+                <ul>
+                    <li><i class="fa-brands fa-facebook"></i></li>
+                    <li><i class="fa-brands fa-x-twitter"></i></li>
+                    <li><i class="fa-brands fa-instagram"></i></li>
+                    <li><i class="fa-brands fa-discord"></i></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
